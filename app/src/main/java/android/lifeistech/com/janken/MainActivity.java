@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -11,7 +12,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     TextView player;
-    TextView cpu;
+    ImageView cpu;
     TextView result;
     int number;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         player = (TextView)findViewById(R.id.player);
-        cpu = (TextView)findViewById(R.id.cpu);
+        cpu = (ImageView)findViewById(R.id.cpu);
         result = (TextView)findViewById(R.id.result);
     }
 
@@ -30,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
         number = random.nextInt(3);
 
         if (number == 0) {
-            cpu.setText("相手の手はグーです");
+            cpu.setImageResource(R.drawable.goo);
             result.setTextColor(Color.rgb(0,0,0));
             result.setText("あいこです");
         }else if (number == 1) {
-            cpu.setText("相手の手はチョキです");
+            cpu.setImageResource(R.drawable.choki);
             result.setTextColor(Color.rgb(255,0,0));
             result.setText("あなたの勝ちです");
         }else if (number == 2) {
-            cpu.setText("相手の手はパーです");
+            cpu.setImageResource(R.drawable.paa);
             result.setTextColor(Color.rgb(0,0,255));
             result.setText("あなたの負けです");
         }
@@ -50,15 +51,15 @@ public class MainActivity extends AppCompatActivity {
         number = random.nextInt(3);
 
         if (number == 0) {
-            cpu.setText("相手の手はグーです");
-            result.setText("あなたの負けです");
+            cpu.setImageResource(R.drawable.goo);
             result.setTextColor(Color.rgb(0,0,255));
+            result.setText("あなたの負けです");
         }else if (number == 1) {
-            cpu.setText("相手の手はチョキです");
+            cpu.setImageResource(R.drawable.choki);
             result.setTextColor(Color.rgb(0,0,0));
             result.setText("あいこです");
         }else if (number == 2) {
-            cpu.setText("相手の手はパーです");
+            cpu.setImageResource(R.drawable.paa);
             result.setTextColor(Color.rgb(255,0,0));
             result.setText("あなたの勝ちです");
         }
@@ -70,15 +71,15 @@ public class MainActivity extends AppCompatActivity {
         number = random.nextInt(3);
 
         if (number == 0) {
-            cpu.setText("相手の手はグーです");
-            result.setText("あなたの勝ちです");
+            cpu.setImageResource(R.drawable.goo);
             result.setTextColor(Color.rgb(255,0,0));
+            result.setText("あなたの勝ちです");
         }else if (number == 1) {
-            cpu.setText("相手の手はチョキです");
+            cpu.setImageResource(R.drawable.choki);
             result.setTextColor(Color.rgb(0,0,255));
             result.setText("あなたの負けです");
         }else if (number == 2) {
-            cpu.setText("相手の手はパーです");
+            cpu.setImageResource(R.drawable.paa);
             result.setTextColor(Color.rgb(0,0,0));
             result.setText("あいこです");
         }
