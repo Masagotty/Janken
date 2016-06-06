@@ -1,6 +1,7 @@
 package android.lifeistech.com.janken;
 
 import android.graphics.Color;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView player;
+    ImageView player;
     ImageView cpu;
     TextView result;
     int number;
@@ -20,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        player = (TextView)findViewById(R.id.player);
+        player = (ImageView)findViewById(R.id.player);
         cpu = (ImageView)findViewById(R.id.cpu);
         result = (TextView)findViewById(R.id.result);
     }
 
     public void goo(View v) {
-        player.setText("あなたの手はグーです！");
+        player.setImageResource(R.drawable.goo);
         Random random = new Random();
         number = random.nextInt(3);
 
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void choki(View v) {
-        player.setText("あなたの手はチョキです！");
+        player.setImageResource(R.drawable.choki);
         Random random = new Random();
         number = random.nextInt(3);
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void paa(View v) {
-        player.setText("あなたの手はパーです！");
+        player.setImageResource(R.drawable.paa);
         Random random = new Random();
         number = random.nextInt(3);
 
